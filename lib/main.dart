@@ -4,6 +4,11 @@ import 'package:audioplayers/audioplayers.dart';
 void main() => runApp(const XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  void playSound(int soundNumber) {
+    final player = AudioPlayer();
+    player.play(AssetSource('note$soundNumber.wav'));
+  }
+
   const XylophoneApp({super.key});
 
   @override
@@ -14,11 +19,11 @@ class XylophoneApp extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8.0),
             child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note1.wav'));
+                    playSound(1);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -30,8 +35,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note2.wav'));
+                    playSound(2);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.orange,
@@ -43,8 +47,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note3.wav'));
+                    playSound(3);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.yellow,
@@ -56,8 +59,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note4.wav'));
+                    playSound(4);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.green,
@@ -69,8 +71,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note5.wav'));
+                    playSound(5);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.teal,
@@ -82,8 +83,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note6.wav'));
+                    playSound(6);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blue,
@@ -95,8 +95,7 @@ class XylophoneApp extends StatelessWidget {
                 ),
                 FilledButton.tonal(
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('note7.wav'));
+                    playSound(7);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -111,6 +110,7 @@ class XylophoneApp extends StatelessWidget {
           ),
         ),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
